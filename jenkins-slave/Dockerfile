@@ -6,8 +6,8 @@ MAINTAINER Ervin Varga <ervin.varga@gmail.com>
 RUN apt-get update
 RUN apt-get -y upgrade
 
-# Install a basic SSH server
-RUN apt-get install -y openssh-server
+# Install a basic SSH server, Git
+RUN apt-get install -y openssh-server git
 RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
 RUN mkdir -p /var/run/sshd
 
